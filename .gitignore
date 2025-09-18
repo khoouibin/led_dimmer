@@ -1,0 +1,16 @@
+# make an ignorant file list.
+# Mar25,2020. Wen, AM10:23.
+
+# ignore file type.
+*.o
+*.pyc
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+
+# ignore folder. 
+build-*
+LOG/
+build/
