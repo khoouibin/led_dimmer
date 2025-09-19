@@ -10,10 +10,24 @@ CONFIG -= app_bundle
 
 SOURCES += \
         main.cpp \
-        source/cli.cpp
+        source/cli.cpp \
+        source/logger_wrapper.cpp \
+        source/interface_to_host.cpp \
+        source/notification_pkg.cpp \
+        source/config_settings.cpp \
+        source/access_ini.cpp \
+        source/HandleCmd.cpp
 
 HEADERS += \
-        header/cli.h
+        header/json.hpp \
+        header/cli.h \
+        header/logger_wrapper.h \
+        header/interface_to_host.h \
+        header/notification_pkg.h \
+        header/config_settings.h \
+        header/access_ini.h \
+        header/return_code.h \
+        header/HandleCmd.h
 
 INCLUDEPATH += $$PWD/header
 
@@ -21,3 +35,5 @@ INCLUDEPATH += $$PWD/header
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+LIBS += -lPocoUtil -lPocoData -lPocoFoundation -lPocoNet -lPocoJSON -lstdc++fs
